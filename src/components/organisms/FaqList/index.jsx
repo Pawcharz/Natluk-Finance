@@ -35,11 +35,6 @@ const questionsData = [
         category: categoriesEnum.METAMASK,
     },
     {
-        question: 'Where can I check NC price chart?',
-        answer: 'In this tutorial we show You how to Set-up MetaMask crypto wallet.',
-        category: categoriesEnum.NC,
-    },
-    {
         question: 'Do I need Matic to add NC to Liquidity pool?',
         answer: 'Yes, You`ll need the same value of Matic as your NC coins to add them.',
         category: categoriesEnum.NC,
