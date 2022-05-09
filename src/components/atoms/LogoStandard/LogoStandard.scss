@@ -1,0 +1,44 @@
+@use 'src/scss/config.scss' as *;
+
+.logo-standard {
+    height: fit-content;
+    width: fit-content;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    &__icon {
+        height: 6rem;
+        width: 6rem;
+
+        border-radius: 1.2rem;
+    }
+    &__text {
+        height: 5.5rem;
+        width: fit-content;
+
+        object-fit: cover;
+    }
+
+    &__name {
+        margin: auto auto 0 auto;
+        
+        @include text-gradient-neon;
+        font-weight: 500;
+
+        line-height: 1;
+        font-size: 5rem;
+    }
+    &__name--longer  {
+        font-weight: 500;
+    }
+    
+
+
+    &--white {
+        .logo-standard__name {
+            color: $white !important;
+        }
+    }
+}

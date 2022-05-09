@@ -1,0 +1,10 @@
+@use 'src/scss/config.scss' as *;
+
+$elems-size: 2.8rem;
+.socials-navbar {
+    margin-left: 2rem;
+
+    a {
+        font-size: $elems-size;
+    }
+}

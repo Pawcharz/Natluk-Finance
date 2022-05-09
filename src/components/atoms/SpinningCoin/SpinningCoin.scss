@@ -1,0 +1,20 @@
+
+@keyframes animationFloating {
+    from {
+        transform: translateY(-2rem);
+    }
+
+    to {
+        transform: translateY(2rem);
+    }
+}
+.spinning-coin {
+    height: min(30rem, 40vw);
+    width: min(30rem, 40vw);
+
+    object-fit: contain;
+
+    &--floating {
+        animation: animationFloating 3s infinite alternate ease-in-out;
+    }
+}

@@ -1,0 +1,71 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+
+$orientationChange-breakpoint: map.get($breakpoints, "lg");
+.tutorial-card {
+    height: fit-content;
+    width: 100%;
+    padding: 6rem;
+
+    color: $white;
+    background-color: $gray-80;
+    border-radius: 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    &__left {
+        height: auto;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__title {
+
+        }
+        &__description {
+            font-weight: 400;
+        }
+
+        .button-standard {
+            margin: auto auto 0 0;
+        }
+    }
+    &__right {
+        height: fit-content;
+        width: fit-content;
+        max-width: 100%;
+
+        transition: all 1s ease-out;
+
+        display: flex;
+        align-self: center;
+
+        img {
+            max-height: 24rem;
+            max-width: 36rem;
+
+            border-radius: 2rem;
+
+            object-fit: cover;
+            object-position: top left;
+        }
+    }
+
+    @media screen and (max-width: $orientationChange-breakpoint) {
+        padding: 4rem;
+
+        flex-direction: column-reverse;
+        text-align: center;
+
+        &__left {
+            align-items: center;
+            .button-standard {
+                margin: 0;
+            }
+        }
+    }
+}

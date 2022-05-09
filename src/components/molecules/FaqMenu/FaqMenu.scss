@@ -1,0 +1,48 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+@use 'src/components/organisms/Navbar/Navbar.scss' as *;
+
+
+$layoutChange-breakpoint-sm: map.get($breakpoints, "sm");
+
+.faq-menu {
+    height: fit-content;
+    //min-height: 40rem;
+    width: 18rem;
+    padding: 1rem;
+
+    position: sticky;
+    top: calc($navbar-height + $padding-minSides);
+    left: 0;
+
+    
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 5rem;
+    grid-gap: 1rem;
+
+    &::before {
+        content: '';
+
+        box-sizing: border-box;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+
+        background-color: rgba($white, 0.125);
+        border: 1px solid rgba($gray-80, 0.8);
+        border-radius: 1.5rem;
+        backdrop-filter: blur(0.5rem);
+    }
+
+    @media screen and (max-width: $layoutChange-breakpoint-sm) {
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, max(30%, 14rem));
+        grid-auto-rows: 4rem;
+        justify-content: space-evenly;
+        //font-size: 0.9rem;
+        z-index: 2;
+    }
+}

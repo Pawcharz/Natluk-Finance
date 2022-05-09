@@ -1,0 +1,26 @@
+@use 'src/scss/config.scss' as *;
+
+$button-size: 3rem;
+.button-back {
+    height: $button-size;
+    width: $button-size;
+
+    border-radius: $button-size;
+
+    transition: all 0.2s ease-out;
+
+    box-sizing: border-box;
+    display: flex;
+    &__image {
+        box-sizing: border-box;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+
+        //transition: all 0.2s ease-out;
+    }
+    &:hover {
+        transform: scale(1.2) rotateZ(15deg);
+    }
+}
+

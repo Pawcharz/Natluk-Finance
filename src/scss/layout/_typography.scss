@@ -1,0 +1,67 @@
+@use "src/scss/config" as *;
+
+h1,
+.headline-1 {
+    font-size: 2.8em;
+    margin: 0 0 1rem;
+    padding: 0;
+    color: var(--subtitles)
+}
+
+h2,
+.headline-2 {
+    font-size: 2.6em;
+}
+
+h3,
+.headline-3 {
+    font-size: 2.4em;
+}
+
+h4,
+.subtitle-1 {
+    font-size: 1.8em;
+}
+
+h5,
+.subtitle-2 {
+    font-size: 1.6em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.headline-1,
+.headline-2,
+.headline-3,
+.subtitle-1,
+.subtitle-2 {
+    margin: 0;
+    font-family: $font-headings;
+    font-weight: 600;
+}
+
+p,
+a {
+    margin: 0;
+    text-decoration: none;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+    font-family: $font-default;
+}
+
+
+
+.overline,
+.caption {
+    font-family: $font-headings;
+}
+
+.layout {
+    font-family: $font-default;
+}

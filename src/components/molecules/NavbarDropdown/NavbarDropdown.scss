@@ -1,0 +1,73 @@
+@use 'src/scss/config.scss' as *;
+@use 'src/components/atoms/ButtonNavbar/ButtonNavbar.scss' as *;
+@use 'src/components/organisms/Navbar/Navbar.scss' as *;
+
+$navbarButton-minHeight: calc($navbar-height - 2 * $navbar-padding-vertical);
+.navbar-dropdown {
+    height: fit-content;
+    width: fit-content;
+
+    margin-top: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    .button-navbar {
+        min-height: $navbarButton-minHeight;
+    }
+    &__buttons {
+        height: fit-content;
+        width: min-content;
+        padding: 0;
+
+        overflow: hidden;
+
+        text-align: center;
+        transition: all $buttonNavbar-transitionTime ease-out;       
+        height: 0;
+        
+        transform: translateY(3rem);
+        opacity: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+.navbar-dropdown:hover {
+
+    .button-navbar {
+
+        .button-navbar__main {
+
+            padding: 0.8rem $buttonNavbar-padding-horizontal;
+            //margin: 0;
+
+            background-color: rgba($white, 0.4);
+            border: 1px solid rgba($gray-20, 0.2);
+            border-radius: 2rem;
+
+            &__arrow {
+                transform: rotateZ(90deg);
+            }
+        }
+    }
+    .navbar-dropdown__buttons {
+ 
+        padding: 2rem;
+        margin-top: calc(#{$navbar-padding-vertical} + 0.5rem);
+
+        background-color: rgba($gray-60, 0.4);
+        border: 1px solid rgba($gray-80, 0.1);
+        border-radius: 2rem;
+        backdrop-filter: blur(1rem);
+
+        transform: translateY(0);
+        opacity: 1;
+        height: fit-content;
+    }
+
+}

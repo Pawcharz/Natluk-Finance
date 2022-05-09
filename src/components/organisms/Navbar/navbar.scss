@@ -1,0 +1,79 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+
+$navbar-height: 8rem;
+$navbar-padding-vertical: 1.5rem;
+$navbar-maxWidth: map.get($container-max-widths, "xl");
+
+$layoutChange-breakpoint-lg: map.get($breakpoints, "lg");
+$layoutChange-breakpoint-sm: map.get($breakpoints, "sm");
+
+.navbar {
+    height: $navbar-height;
+    width: 100%;
+    padding: $navbar-padding-vertical 4rem;
+
+    backdrop-filter: blur(16px);
+    background-color: rgba(37, 37, 37, 0.75);
+
+    position: fixed;
+    z-index: 998;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &__main {
+        height: 100%;
+        width: 100%;
+        max-width: $navbar-maxWidth;
+
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+
+        .logo-standard {
+            margin-right: auto;
+        }
+        .menu-navbar {
+            height: 100%;
+        }
+        .button-navbar-menu {
+            max-height: calc($navbar-height - 2 * $navbar-padding-vertical);
+            max-width: calc($navbar-height - 2 * $navbar-padding-vertical);
+            display: none;
+        }
+    }
+    
+}
+
+@media screen and (max-width: $layoutChange-breakpoint-lg) {
+    .navbar {
+        &__main {
+
+            .menu-navbar {
+                display: none;
+            }
+
+            .button-navbar-menu {
+                display: flex;
+            }
+        }
+    }
+    
+}
+@media screen and (max-width: $layoutChange-breakpoint-sm) {
+    .navbar {
+        
+        padding: $navbar-padding-vertical 2rem;
+        &__main {
+            .socials-navbar {
+                display: none;
+            }
+            
+        }
+    }
+    
+}

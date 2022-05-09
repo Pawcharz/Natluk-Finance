@@ -1,0 +1,120 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+@use 'src/components/organisms/Navbar/Navbar.scss' as *;
+
+$layoutChange-breakpoint-lg: map.get($breakpoints, "lg");
+$layoutChange-breakpoint-sm: map.get($breakpoints, "sm");
+
+$navbarMenu-transition-time: 0.4s;
+
+.menu-navbar {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+
+    &__greyarea {
+        height: 100%;
+        width: 100%;
+        
+        display: flex;
+        align-items: center;
+    }
+    &__main {
+        height: 100%;
+        width: fit-content;
+        
+        display: flex;
+        align-items: center;
+
+        &__topbar {
+            display: none;
+        }
+        &__list {
+            height: 100%;
+            width: fit-content;
+
+            display: flex;
+            gap: 3rem;
+        }
+
+    }
+    
+}
+@media screen and (max-width: $layoutChange-breakpoint-lg) {
+    .menu-navbar {
+        height: 100vh !important;
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    
+        &__greyarea {
+            background-color: $gray-60;
+
+            transition: all $navbarMenu-transition-time ease-in-out;
+            transform: translateX(-100vw);
+        }
+        &__main {
+            width: 100%;
+
+            background-color: $gray-80;
+
+
+            transition: all $navbarMenu-transition-time ease-in-out;
+            transition-delay: $navbarMenu-transition-time;
+            transform: translateX(-100vw);
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6rem;
+    
+            &__topbar {
+                height: $navbar-height;
+                width: 100%;
+                padding: $navbar-padding-vertical 4rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            &__list {
+                height: fit-content;
+                width: fit-content;
+    
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0;
+            }
+    
+        }
+        
+    }
+    .menu-navbar.active {  
+
+        .menu-navbar__greyarea {
+            transform: translateX(0);
+
+            .menu-navbar__main {
+                transform: translateX(0);
+            }
+        }
+        
+    }
+}
+@media screen and (max-width: $layoutChange-breakpoint-sm) {
+    .menu-navbar {
+        
+        &__main {
+            &__topbar {
+                padding: $navbar-padding-vertical 2rem;
+            }
+    
+        }
+        
+    }
+}

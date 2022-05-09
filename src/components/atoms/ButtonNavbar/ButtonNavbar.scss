@@ -1,0 +1,47 @@
+@use 'src/scss/config.scss' as *;
+
+$buttonNavbar-maxHeight: 5rem;
+$buttonNavbar-padding-horizontal: 3rem;
+$buttonNavbar-transitionTime: 0.2s;
+
+.button-navbar {
+    height: fit-content;
+    width: fit-content;    
+    //padding: 0 $buttonNavbar-padding-horizontal;
+
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    
+    &__main {
+        height: fit-content;
+        width: fit-content;
+
+        //margin: 0.8rem $buttonNavbar-padding-horizontal;
+        margin: auto;
+
+        transition: all $buttonNavbar-transitionTime ease-out;
+
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        &__name {
+            margin: auto;
+    
+            color: $white;
+            font-weight: 500;
+        }
+        &__arrow {
+            font-size: 2.4rem;
+            line-height: 1;
+            
+            background: radial-gradient($white,rgba($gray-60, 0)), linear-gradient( rgba($gray-60, 0.8), $gray-20, rgba($gray-60, 0.8));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            transition: all $buttonNavbar-transitionTime * 1.5 ease-in-out;
+        }
+
+    }
+}

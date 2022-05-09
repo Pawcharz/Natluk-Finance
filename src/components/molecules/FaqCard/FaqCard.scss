@@ -1,0 +1,28 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+
+$orientationChange-breakpoint: map.get($breakpoints, "md");
+$faqCard-height: 8rem;
+.faq-card {
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    
+    background-color: $gray-80;
+    border-radius: 1.5rem;
+    //filter: drop-shadow(0 0 1rem rgba($gray-80, 0.05));
+
+    color: $white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;    
+
+    &__question {
+        line-height: 1.2;
+    }
+    &__answer {
+        //text-align: justify;
+        font-weight: 500;
+    }
+}

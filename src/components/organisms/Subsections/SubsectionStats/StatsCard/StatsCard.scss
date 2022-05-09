@@ -1,0 +1,67 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+
+.stats-card {
+    min-height: 20rem;
+    width: 100%;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    &__back {
+
+        height: 95%;
+        width: 90%;
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        bottom: 5%;
+
+        border-radius: 1rem;
+        background: rgb(92, 103, 125);
+        background: linear-gradient(90deg, rgba(92, 103, 125, 1) 0%, rgba(151, 151, 151, 1) 100%);
+    }
+    &__main {
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        bottom: -8%;
+
+        border-radius: 15px;
+        background-color: $gray-80;
+
+        transition: bottom .2s ease-in-out;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        &:hover {
+            bottom: -12%;
+        }
+
+        h4 {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-weight: 500;
+        }
+        &__name {
+            font-size: 3rem;
+        }
+        &__value {
+            width: 80%;
+
+            padding: 2rem 2rem;
+            font-size: 2rem;
+            border-radius: 2rem;
+
+            background: rgb(92, 103, 125);
+            background: linear-gradient(90deg, rgba(92, 103, 125, 1) 0%, rgba(151, 151, 151, 1) 100%);
+        }
+    }
+}

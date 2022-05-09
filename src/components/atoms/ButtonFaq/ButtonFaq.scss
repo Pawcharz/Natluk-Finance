@@ -1,0 +1,24 @@
+@use 'src/scss/config.scss' as *;
+
+
+.button-faq {
+    height: 4rem;
+    width: 4rem;
+
+    display: flex;
+    align-items: center;
+
+    &__img {
+        height: 4rem;
+        width: 4rem;
+
+        transition: all 0.4s ease-in-out;
+    }
+}
+.button-faq.active {
+
+    .button-faq__img {
+        transform: rotateZ(90deg);// X / Y / Z ???
+    }
+
+}

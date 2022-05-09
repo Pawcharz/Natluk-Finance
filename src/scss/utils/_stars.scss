@@ -1,0 +1,40 @@
+// n is number of stars required
+@function multiple-box-shadow ($n, $maxH) {
+    $value: '#{random(2000)}px #{random( $maxH )}px #FFF';
+    @for $i from 2 through $n {
+        $value: '#{$value} , #{random(2000)}px #{random( $maxH )}px #FFF';
+    }
+
+    @return unquote($value);
+}
+
+@mixin starsBackground($starSize, $height, $starsAmount, $animTime) {
+    $shadows-stars:  multiple-box-shadow($starsAmount, $height);
+
+    z-index: -1;
+    @keyframes animStar {
+    
+        from {
+            transform: translateY(0px)
+        }        
+        to {
+            transform: translateY(calc(-1 * #{$height}))
+        }	
+    }
+
+    width: $starSize;
+    height: $starSize;
+    background: transparent;
+    box-shadow: $shadows-stars;
+    animation: animStar $animTime linear infinite;
+        
+    &:after {
+        content: " ";
+        position: absolute;
+        top: $height;
+        width: $starSize;
+        height: $starSize;
+        background: transparent;
+        box-shadow: $shadows-stars;
+    }
+}

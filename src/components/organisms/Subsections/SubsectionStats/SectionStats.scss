@@ -1,0 +1,20 @@
+@use "src/scss/config.scss" as *;
+@use "sass:map";
+
+.section-stats {
+    background-color: $black-90;
+    background-image: url("/assets/images/backgrounds/tutorials-back-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    z-index: 0;
+
+    .section-standard__main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, max(20%, 20rem));
+        grid-row-gap: 5rem;
+        grid-column-gap: 3rem;
+    }
+}

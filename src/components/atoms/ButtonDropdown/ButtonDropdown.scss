@@ -1,0 +1,24 @@
+@use 'src/scss/config.scss' as *;
+
+$buttonDropdown-padding-horizontal: 0.4rem;
+.button-dropdown {
+
+    text-decoration: none;
+    height: fit-content;
+    width: fit-content;
+
+    transition: all 0.15s ease-out;
+
+    &__name {
+        font-weight: 500;
+        color: $white;
+        line-height: 1.2;
+    }
+}
+.button-dropdown:hover {
+    padding: $buttonDropdown-padding-horizontal calc(#{$buttonDropdown-padding-horizontal} + 1rem);
+
+    background-color: rgba($white, 0.4);
+    border: 1px solid rgba($gray-20, 0.1);
+    border-radius: 2rem;
+}

@@ -1,0 +1,10 @@
+@use 'src/scss/config.scss' as *;
+
+.button-faq-menu {
+
+    transition: all 0.2s ease-in-out;
+    &.active {
+        background-color: $white;
+        color: $black;
+    }
+}

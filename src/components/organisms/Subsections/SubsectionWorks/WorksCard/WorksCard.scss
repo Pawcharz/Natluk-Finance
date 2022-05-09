@@ -1,0 +1,113 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+
+.works-card {
+    height: fit-content;
+    width: fit-content;
+    padding: 12rem 0 0 12rem;
+
+    left: -6rem;
+
+
+    position: relative;
+    &__number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        font-size: 45rem;
+        font-weight: 500;
+        color: rgba($white, 0.6);
+        font-style: italic;
+        font-family: "Roboto", sans-serif;
+
+        line-height: 0.8;
+    }
+    &__main {
+        height: 40rem;
+        width: 30rem;
+
+        position: relative;
+        z-index: 2;
+
+        background-color: rgba($gray-60, 0.1);
+        backdrop-filter: blur(0.8rem);
+
+        border-radius: 2.5rem;
+        border: 1px dashed rgba(253, 245, 230, 0.4);
+        
+        overflow: hidden;
+        transition: all .5s;
+
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__image {
+            height: 70%;
+            width: 100%;
+
+            object-fit: contain;
+        }
+        &__name {
+            padding: 2rem;
+            font-weight: 500;
+            text-align: center;
+
+
+            font-size: 2rem;
+        }
+
+        .slider {
+            height: 50%;
+            width: 100%;
+
+            position: absolute;
+            bottom: -50%;
+            
+            background-color: #b6b6b62f;
+            backdrop-filter: blur(0.2rem);
+            border-radius: 2.5rem;
+
+            transition: all 0.2s ease-in-out;
+            //transform: translateY(100%);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+
+            &__button {
+                width: calc(100% - 4rem);
+                height: fit-content;
+                padding: 1.75rem 0;
+
+                margin: 2rem 2rem auto 2rem;
+
+                background-color: $blue-80;
+                border-radius: 2rem;
+
+                color: $white;
+                text-align: center;
+                text-decoration: none;
+
+                transition: all .3s ease-in-out;
+
+                h5 {
+                    font-weight: 500;
+                }
+                &:hover {
+                    background-color: #0b2136;
+                }
+            }
+            
+        }
+        &:hover {
+
+            .slider {
+                bottom: 0;
+            }
+        }
+    }
+}

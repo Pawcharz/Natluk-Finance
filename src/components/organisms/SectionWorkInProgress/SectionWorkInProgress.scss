@@ -1,0 +1,36 @@
+@use "src/scss/config.scss" as *;
+@use "sass:map";
+
+.section-workInProgress {
+    min-height: 100vh;
+
+    background-color: $black-90;
+    background-image: url("/assets/images/backgrounds/tutorials-back-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: $white;
+
+    &__bar {
+        height: 20vh;
+        width: 60vw;
+        padding: 3rem;
+
+        border: $border-standard-dashed;
+        border-radius: 1.5rem;
+        backdrop-filter: blur(1rem);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        h1 {
+            font-size: 4em;
+            font-weight: 500;
+
+            @include text-gradient-neon;
+        }
+    }
+}

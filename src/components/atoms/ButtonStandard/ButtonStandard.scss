@@ -1,0 +1,48 @@
+@use 'src/scss/config.scss' as *;
+
+.button-standard {
+    height: fit-content;
+    width: fit-content;
+    padding: 1.2rem 4rem;
+
+    color: $white;
+
+    background-color: $blue-40;
+    border: 1px dashed rgba($gray-20, 0.4);
+    border-radius: 1rem;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    
+    border: $border-standard-dashed;
+
+    transition: all 0.2s ease-in-out;
+
+    &--transparent {
+        background-color: rgba($white, 0.01);
+    }
+    &--glass {
+        background-color: rgba($white, 0.2);
+    }
+    &--aligned {
+        width: 100%;
+        height: 100%;
+        padding: 0 1rem;
+    }
+
+    &--slim {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    &--rounded-m {
+        border-radius: 1.5rem;
+    }
+
+    &:hover {
+        background-color: rgba($blue-80, 1);
+    }
+}

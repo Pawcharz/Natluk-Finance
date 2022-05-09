@@ -1,0 +1,30 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+
+@use 'src/components/molecules/NavbarMenu/NavbarMenu.scss' as *;
+.button-navbar-menu {
+    padding: 2px;
+    margin-right: 2%;
+    flex-direction: column;
+    justify-content: center;
+}
+.bar {
+    display: block;
+    width: 35px;
+    margin: 5px auto;
+    height: 5px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(255, 255, 255);
+}
+.active {
+    .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .bar:nth-child(3) {
+        transform: translateY(-15px) rotate(-45deg);
+    }
+    .bar:nth-child(1) {
+        transform: translateY(15px) rotate(45deg);
+    }
+}

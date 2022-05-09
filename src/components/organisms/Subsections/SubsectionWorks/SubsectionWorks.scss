@@ -1,0 +1,56 @@
+@use "src/scss/config.scss" as *;
+@use "sass:map";
+
+$breakpoint-lg: map.get($breakpoints, "lg");
+$maxWidth-xl: map.get($container-max-widths, "xl");
+.section-works {
+    background-color: $black-90;
+    background-image: url("/assets/images/backgrounds/tutorials-back-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    z-index: 0;
+
+    color: $white;
+
+    .section-standard__main {
+        flex-direction: column;
+    }
+    &__title-container {
+        width: 100%;
+        max-width: $maxWidth-xl;
+
+        display: flex;
+
+        .title {
+            font-size: 3.6rem;
+            font-weight: 500;
+
+            margin-left: 7rem;
+
+            position: relative;
+            &::before {
+                content: "";
+                width: 5rem;
+                height: 2px;
+
+                position: absolute;
+                top: 50%;
+                bottom: 50%;
+                left: -6rem;
+
+                background-color: white;
+            }
+        }
+    }
+    &__main {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        gap: 6rem;
+    }
+}

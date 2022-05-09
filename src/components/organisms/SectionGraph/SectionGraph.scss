@@ -1,0 +1,29 @@
+@use "src/scss/config.scss" as *;
+@use "sass:map";
+
+.section-graph {
+    background-color: $black-90;
+    background-image: url("/assets/images/backgrounds/tutorials-back-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: $white;
+
+    &__title {
+        align-self: baseline;
+
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    &__graph-container {
+        height: fit-content;
+        width: 100%;
+        align-self: baseline;
+
+        border: 1px dashed rgba($gray-60, 0.6);
+        border-radius: 2rem;
+        filter: drop-shadow(0 0 2rem rgba($white, 0.05));
+        backdrop-filter: blur(1rem);
+    }
+}

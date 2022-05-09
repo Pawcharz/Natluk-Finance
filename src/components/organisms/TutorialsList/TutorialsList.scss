@@ -1,0 +1,42 @@
+@use "src/scss/config.scss" as *;
+@use "sass:map";
+
+$list-maxWidth: map.get($container-max-widths, "xl");
+
+.tutorials-list {
+    height: fit-content;
+    width: 100%;
+    padding: 6rem $padding-minSides;
+
+    background-color: $black-90;
+    background-image: url("/assets/images/backgrounds/tutorials-back-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__main {
+        max-width: $list-maxWidth;
+
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        &__title {
+            color: $blue-neon;
+            font-size: 4rem;
+            font-weight: 400;
+        }
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+    }
+}

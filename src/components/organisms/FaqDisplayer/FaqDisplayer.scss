@@ -1,0 +1,76 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+@use 'src/components/organisms/Navbar/Navbar.scss' as *;
+
+$displayer-transition-time: 0.25s;
+$padding-main: 4.5rem;
+
+$displayer-maxWidth: map.get($container-max-widths, "lg");
+.faq-displayer {
+    height: 100%;
+    width: 100%;
+    padding: $padding-minSides;
+    padding-top: calc($padding-minSides + $navbar-height);
+    padding-right: 0;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    background-color: rgba($gray-80, 0.1);
+    backdrop-filter: blur(0.1rem);
+
+    transition: all $displayer-transition-time ease-in-out;
+
+    display: flex;
+
+    &__main {
+        height: 100%;
+
+        width: 55rem;
+        max-width: 90%;
+        padding: $padding-main;
+        padding-right: calc($padding-main + $padding-minSides);
+
+        position: relative;
+        margin: auto 0 auto auto;
+    
+        color: $white;
+        background-color: $gray-60;
+        filter: drop-shadow(0 0 2rem rgba($black, 0.3));
+        border-radius: 1rem 0 0 2.5rem;
+
+        transition: all $displayer-transition-time ease-in;
+        transform: translateX(0);
+
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        &__question {
+
+        }
+        &__answer {
+            font-weight: 500;
+            text-align: justify;
+        }
+        
+        .button-back {
+
+            position: absolute;
+            
+            top: 0.5rem;
+            left: 0.5rem;
+        }
+        
+    }
+}
+.faq-displayer.hidden {
+
+    opacity: 0;
+
+    .faq-displayer__main {
+        transform: translateX(100%);
+    }
+}

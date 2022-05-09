@@ -1,0 +1,13 @@
+@mixin high-contrast {
+    .high-contrast & {
+        @content;
+    }
+}
+
+@mixin text-gradient-neon {
+    background: linear-gradient(15deg, rgba(#00ebeb, 0.5), rgba(#00ebeb, 0.6), rgba(#00ebeb, 0.5)), linear-gradient(white, #00ebeb, white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    color: white;
+}

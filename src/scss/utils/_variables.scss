@@ -1,0 +1,62 @@
+/** *********** GRID *********** **/
+
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1215px,
+    xxl: 1615px,
+);
+
+/** *********** TYPOGRAPHY *********** **/
+
+// font types
+$font-default: Arial, sans-serif;
+$font-headings: Arial, sans-serif;
+
+// sizes
+$font-xxs: 1.2rem;
+$font-xs: 1.4rem;
+$font-s: 1.6rem;
+$font-m: 1.8rem;
+$font-l: 2.4rem;
+$font-xl: 2.6rem;
+$font-xxl: 2.8rem;
+
+/** *********** COLORS *********** **/
+
+// Basic
+$white: #fff;
+$black: #000;
+$black-90: #101010;
+
+// Gray
+$gray-90: #2b2b2c;
+$gray-80: #252525;
+$gray-60: #646668;
+$gray-20: #F4F3F3;
+
+
+// Blue
+$blue-neon: #00ebeb;
+
+$blue-20: #0466C8;
+$blue-40: #0353a4;
+$blue-50: #023e7d;
+$blue-60: #002855;
+$blue-70: #001845;
+$blue-80: #113050;
+$blue-90: #001233;
+
+
+
+
+$border-standard-dashed: 1px dashed rgba($gray-20, 0.4);
+
+
+/** *********** SIZES *********** **/
+
+// Margins
+
+// Paddings
+$padding-minSides: calc(2.5%);

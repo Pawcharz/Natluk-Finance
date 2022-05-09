@@ -1,0 +1,43 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+
+$layoutChange-xl: map.get($container-max-widths, "xl");
+$layoutChange-md: map.get($container-max-widths, "md");
+.faq-category-list {
+    height: fit-content;
+    width: 100%;
+
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__name {
+        color: $blue-neon;
+        font-weight: 500;
+    }
+    &__main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 3rem;
+        grid-column-gap: 4rem;
+
+        @media screen and (max-width: $layoutChange-xl) {  
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-width: $layoutChange-md) {  
+            grid-template-columns: 1fr;
+        }
+    }
+    
+
+    transition: all 0.2s ease-in-out;
+    &.hidden {
+        z-index: 0;
+
+        transform: translateY(-12rem);
+        opacity: 0;
+    }
+}

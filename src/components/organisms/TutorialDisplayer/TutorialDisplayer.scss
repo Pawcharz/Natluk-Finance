@@ -1,0 +1,90 @@
+@use 'src/scss/config.scss' as *;
+@use "sass:map";
+@use 'src/components/organisms/Navbar/Navbar.scss' as *;
+
+$padding-main-top: 5rem;
+$padding-main-horizontal: 3rem;
+
+$displayer-transition-time: 0.4s;
+
+$displayer-maxWidth: map.get($container-max-widths, "lg");
+.tutorial-displayer {
+    height: 100%;
+    width: 100%;
+    padding: $padding-minSides;
+    padding-top: $navbar-height;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+
+    overflow: hidden;
+    background-color: rgba($gray-80, 0.1);
+    backdrop-filter: blur(0.1rem);
+
+    transition: all $displayer-transition-time ease-in-out;    
+
+    display: flex;
+    
+    &__main {
+        height: fit-content;
+        max-height: 80vh;
+        width: 100%;
+        max-width: $displayer-maxWidth;
+        padding: $padding-main-top $padding-main-horizontal $padding-main-horizontal $padding-main-horizontal;
+
+        margin: auto;
+        position: relative;
+
+        transition: all $displayer-transition-time ease-in-out;
+
+        background-color: $gray-80;
+        filter: drop-shadow(0 0 2rem rgba($black, 0.3));
+        border-radius: $padding-main-horizontal;
+
+        display: flex;
+        &__list {
+            width: 100%;
+            padding-right: 1.5rem;
+            margin-right: -1rem;
+            
+            overflow-y: scroll;
+
+            display: flex;
+            flex-direction: column;
+            gap: 8rem;
+
+            &::-webkit-scrollbar {
+                width: 1rem;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: rgba($white, 0.075);
+                box-shadow: 0 0 0.25rem rgba($white, 0.05);
+                border-radius: 1rem;
+            }
+            &::-webkit-scrollbar-thumb {
+
+                background-color: $gray-60;
+                border-radius: 1rem;
+            }
+        }
+        .button-back {
+
+            position: absolute;
+            top: calc( (#{$padding-main-top} - 3rem) / 2);
+            right: $padding-main-horizontal;
+
+        }
+        
+    }
+}
+.tutorial-displayer.hidden {
+
+    opacity: 0;
+
+    .tutorial-displayer__main {
+        transform: scale(0.9);
+    }
+}
