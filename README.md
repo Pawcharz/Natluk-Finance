@@ -1,7 +1,7 @@
 # NatLuk Front <!-- omit in toc -->
 
 ## Background
-  The project is the main page of the NC coin (Natluk Coin)
+  This is the main page of the NC coin (Natluk Coin)
 
 ## Technology used?
 - React.js
