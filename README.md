@@ -5,7 +5,7 @@
 
 ## Technology used?
 - React.js
-- SCSS(CSS preprocessor)
+- SCSS
 - FontsAwesome
 - Vite
 
