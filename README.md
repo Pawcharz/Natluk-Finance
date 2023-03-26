@@ -14,3 +14,5 @@
 - Install dependencies, in the root folder `npm install`;
 - Start development: `npm run dev`;
 - Have fun 👾!
+
+#### [Live demo](https://natluk-finance.surge.sh/)
